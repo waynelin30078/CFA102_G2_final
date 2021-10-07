@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>CFA102_G2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+ 
+   <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc/David</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <servlet>
+    <servlet-name>CourseServlet</servlet-name>
+    <servlet-class>com.course.controller.CourseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CourseServlet</servlet-name>
+    <url-pattern>/course/course.do</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>CourseOrderServlet</servlet-name>
+    <servlet-class>com.c_order.controller.C_OrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CourseOrderServlet</servlet-name>
+    <url-pattern>/c_order/c_order.do</url-pattern>
+  </servlet-mapping>
+    <servlet>
+	<servlet-name>VideoServlet</servlet-name>
+	<servlet-class>com.video.controller.VideoServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>VideoServlet</servlet-name>
+	<url-pattern>/video/video.do</url-pattern>
+</servlet-mapping>
+ <servlet>
+    <servlet-name>C_FavoriteServlet</servlet-name>
+    <servlet-class>com.c_favorite.controller.C_FavoriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>C_FavoriteServlet</servlet-name>
+    <url-pattern>/c_favorite/c_favorite.do</url-pattern>
+  </servlet-mapping>
+ 
+   <servlet>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>com.news.controller.NewsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/news/news.do</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>ArticeServlet</servlet-name>
+    <servlet-class>com.artice.controller.ArticeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticeServlet</servlet-name>
+    <url-pattern>/artice/artice.do</url-pattern>
+  </servlet-mapping>
+ <servlet>
+    <servlet-name>DieticianServlet</servlet-name>
+    <servlet-class>com.dietician.controller.DieticianServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DieticianServlet</servlet-name>
+    <url-pattern>/dietician/dietician.do</url-pattern>
+  </servlet-mapping>
+  <!--  飲食日記Servlet -->
+      <servlet>
+    <servlet-name>DiaryServlet</servlet-name>
+    <servlet-class>com.diary.controller.DiaryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DiaryServlet</servlet-name>
+    <url-pattern>/diary/diary.do</url-pattern>
+  </servlet-mapping>
+<!--   餐次紀錄Servlet -->
+  <servlet>
+		<servlet-name>MealServlet</servlet-name>
+		<servlet-class>com.meal.controller.MealServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MealServlet</servlet-name>
+		<url-pattern>/meal/meal.do</url-pattern>
+	</servlet-mapping>
+
+  
+<!--   會員Servlet -->
+   <servlet>
+    <servlet-name>MemberServlet</servlet-name>
+    <servlet-class>com.member.controller.MemberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberServlet</servlet-name>
+    <url-pattern>/member/member.do</url-pattern>
+  </servlet-mapping>
+  <!--  預約時間  -->
+    <servlet>
+    <servlet-name>AppointmentServlet</servlet-name>
+    <servlet-class>com.appointment.controller.AppointmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AppointmentServlet</servlet-name>
+    <url-pattern>/appointment/appointment.do</url-pattern>
+  </servlet-mapping>
+ 
+<!--  預約訂單 -->
+
+    <servlet>
+    <servlet-name>Apt_orderServlet</servlet-name>
+    <servlet-class>com.apt_order.controller.Apt_orderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Apt_orderServlet</servlet-name>
+    <url-pattern>/apt_order/apt_order.do</url-pattern>
+  </servlet-mapping>
+<!-- 預約監聽器14天 -->
+
+    <listener>
+     <listener-class>com.appointment.controller.AppointmentListener</listener-class>
+    </listener> 
+<!-- 預約監聽器 更改FK-->
+
+    <listener>
+     <listener-class>com.apt_order.controller.Apt_orderListener</listener-class>
+    </listener>
+ 
+
+  
+
+<!--  商品Servlet  -->    
+  <servlet>
+    <servlet-name>ProductServlet</servlet-name>
+    <servlet-class>com.product.controller.ProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductServlet</servlet-name>
+    <url-pattern>/product/product.do</url-pattern>
+  </servlet-mapping>
+
+<!--  購物Servlet  -->
+  <servlet> 
+    <servlet-name>ShoppingServlet</servlet-name>
+    <servlet-class>com.product.controller.ShoppingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShoppingServlet</servlet-name>
+    <url-pattern>/Shopping/Shopping.do</url-pattern>
+  </servlet-mapping>
+     
+<!--  優惠活動Servlet  -->  
+  <servlet>
+    <servlet-name>PromotionServlet</servlet-name>
+    <servlet-class>com.promotion.controller.PromotionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PromotionServlet</servlet-name>
+    <url-pattern>/promotion/promotion.do</url-pattern>
+  </servlet-mapping>
+
+<!--  優惠活動明細Servlet  -->
+  <servlet>
+    <servlet-name>Promotion_detailServlet</servlet-name>
+    <servlet-class>com.promotion_detail.controller.Promotion_detailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Promotion_detailServlet</servlet-name>
+    <url-pattern>/promotion_detail/promotion_detail.do</url-pattern>
+  </servlet-mapping>
+  
+<!--  訂單Servlet  -->  
+     <servlet>
+    <servlet-name>P_orderServlet</servlet-name>
+    <servlet-class>com.p_order.controller.P_orderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>P_orderServlet</servlet-name>
+    <url-pattern>/p_order/p_order.do</url-pattern>
+  </servlet-mapping>
+
+<!--  訂單明細Servlet  -->    
+   <servlet>
+    <servlet-name>P_order_detailServlet</servlet-name>
+    <servlet-class>com.p_order_detail.controller.P_order_detailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>P_order_detailServlet</servlet-name>
+    <url-pattern>/p_order_detail/p_order_detail.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--  收藏Servlet  -->    
+   <servlet>
+    <servlet-name>P_favoriteServlet</servlet-name>
+    <servlet-class>com.p_favorite.controller.P_favoriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>P_favoriteServlet</servlet-name>
+    <url-pattern>/p_favorite/p_favorite.do</url-pattern>
+  </servlet-mapping>
+  <!-- 	管理員部分 -->
+	<servlet>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>com.admin.controller.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/admin/admin.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AdminLoginHandler</servlet-name>
+		<servlet-class>com.admin.controller.AdminLoginHandler</servlet-class>
+	</servlet> 
+	<servlet-mapping>
+		<servlet-name>AdminLoginHandler</servlet-name>
+		<url-pattern>/admin/adminLogin</url-pattern>
+	</servlet-mapping>
+	
+<!-- 	管理員部分 -->
+
+
+<!-- 營養師證照開始 -->
+<servlet>
+<servlet-name>D_licenseServlet</servlet-name>
+<servlet-class>com.d_license.controller.D_licenseServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>D_licenseServlet</servlet-name>
+<url-pattern>/D_licenseServlet.do</url-pattern>
+</servlet-mapping>
+
+<!-- 營養師證照結束-->
+
+<!-- 專屬營養師訂單開始 -->
+<servlet>
+<servlet-name>D_orderServlet</servlet-name>
+<servlet-class>com.d_order.controller.DorderServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>D_orderServlet</servlet-name>
+<url-pattern>/dorder.do</url-pattern>
+</servlet-mapping>
+
+
+<!-- 專屬營養師訂單結束 -->
+
+<!-- 	營養師專長開始 -->
+<servlet>
+<servlet-name>DspecialtyServlet</servlet-name>
+<servlet-class>com.d_specialty.controller.DspecialtyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>DspecialtyServlet</servlet-name>
+<url-pattern>/dspecialty.do</url-pattern>
+</servlet-mapping>
+
+
+<!-- 	營養師專長結束 -->
+	
+
+<!-- 	訂閱監聽器開始 -->
+	<listener>
+	<listener-class>com.d_order.controller.DorderListener</listener-class>
+	</listener>
+<!-- 	訂閱監聽器結束 -->
+<!-- 營養師登入濾器 -->
+	<filter>
+		<filter-name>DieticianLoginFilter</filter-name>
+		<filter-class>com.dietician.controller.DieticianLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>DieticianLoginFilter</filter-name>
+		
+<url-pattern>/front_end/protected/chat/dietician_chat_page.jsp</url-pattern> 
+<url-pattern>/front_end/protected/course/addCourse.jsp</url-pattern> 
+<url-pattern>/front_end/protected/course/listAllCourse.jsp</url-pattern> 
+<url-pattern>/front_end/protected/course/update_course_input.jsp</url-pattern> 
+<url-pattern>/front_end/protected/course_video/addCourseVideo.jsp</url-pattern> 
+<url-pattern>/front_end/protected/course_video/listAllVideoByCourse.jsp</url-pattern> 
+<url-pattern>/front_end/protected/dietician/*</url-pattern> 
+<url-pattern>/front_end/protected/appointment/calendar_appointment.jsp</url-pattern>
+<url-pattern>/front_end/protected/appointment/appointment_infoEdit.jsp</url-pattern>
+
+
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
+<!-- 	營養師登入濾器 -->
+<!-- 營養師部分 -->
+
+ <servlet>
+  	<servlet-name>DieticianLoginHandler</servlet-name>
+  	<servlet-class>com.dietician.controller.DieticianLoginHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DieticianLoginHandler</servlet-name>
+  	<url-pattern>/DieticianLoginHandler.do</url-pattern>
+  </servlet-mapping>
+
+<!-- 營養師部分 -->
+<!--  MemberLoginHander註冊開始  -->
+  <servlet>
+  	<servlet-name>MemberLoginHandler</servlet-name>
+  	<servlet-class>com.member.controller.MemberLoginHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MemberLoginHandler</servlet-name>
+  	<url-pattern>/memberLoginHandler.do</url-pattern>
+  </servlet-mapping>
+<!--  MemberLoginHander註冊結束  -->
+
+<!--  MemberLoginFilter註冊開始  -->
+  <filter>
+  	<filter-name>MemberLoginFilter</filter-name>
+  	<filter-class>com.member.filter.MemberLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>MemberLoginFilter</filter-name>
+  
+  	<url-pattern>/front_end/protected/diary</url-pattern>
+  	<url-pattern>/front_end/protected/chat/member_chat_box_icon.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/course/mycourse.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/course/lectures.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/course_cart/course_cart.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/course_cart/course_checkout.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/course_favorite/mycourse_favorite.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/member/*</url-pattern>
+  	<url-pattern>/front_end/protected/appointment/search_appointment.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/appointment/appointment_dietician.jsp</url-pattern>
+  	<url-pattern>/front_end/protected/product/*</url-pattern>
+  	<url-pattern>/front_end/protected/p_order/*</url-pattern>
+  	<url-pattern>/front_end/protected/p_favorite/*</url-pattern>
+ 		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+  </filter-mapping>
+<!--  MemberLoginFilter註冊結束    -->
+</web-app>
